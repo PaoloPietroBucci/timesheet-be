@@ -1,4 +1,4 @@
-package timesheet.excelService;
+package timesheet.service.excelService;
 
 import jxl.Workbook;
 import jxl.write.Label;

@@ -6,6 +6,8 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
+import org.hibernate.annotations.Sort;
+import org.hibernate.annotations.Where;
 import timesheet.libs.BaseAuditedEntity;
 
 import javax.persistence.*;
@@ -16,6 +18,7 @@ import javax.persistence.*;
 @EqualsAndHashCode(onlyExplicitlyIncluded = true, callSuper = true)
 @MappedSuperclass
 @Table(name = "project_type")
+@Where(clause = "deleted = false")
 @JsonInclude(JsonInclude.Include.NON_NULL)
 
 public abstract class ProjectTypeBaseEntity extends BaseAuditedEntity {

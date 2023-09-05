@@ -20,6 +20,7 @@ import java.util.List;
 @MappedSuperclass
 @Table(name = "users")
 @JsonInclude(JsonInclude.Include.NON_NULL)
+
 public abstract class UsersBaseEntity extends BaseAuditedEntity {
     protected static final long serialVersionUID = 1L;
 
@@ -54,7 +55,7 @@ public abstract class UsersBaseEntity extends BaseAuditedEntity {
     @Column(name = "info")
     protected String info;
 
-    @ManyToMany()
+    @ManyToMany
     @JoinTable(
             name = "user_project",
             joinColumns = { @JoinColumn(name = "user_id") },
